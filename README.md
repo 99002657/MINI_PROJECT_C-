@@ -1,0 +1,2 @@
+# MiniProject_Cpp
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3a1880e309be48388ebed807f0288a33)](https://app.codacy.com/gh/99002657/MiniProject_Cpp?utm_source=github.com&utm_medium=referral&utm_content=99002657/MiniProject_Cpp&utm_campaign=Badge_Grade)
