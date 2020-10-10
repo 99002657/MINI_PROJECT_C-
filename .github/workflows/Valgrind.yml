@@ -20,4 +20,6 @@ jobs:
     - name: make test
       run: |
         make test -C Olympic/
-        valgrind ./Olympic/all.out
+        valgrind ./Olympic/
+
+
