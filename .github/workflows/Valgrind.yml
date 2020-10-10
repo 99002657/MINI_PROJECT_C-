@@ -11,17 +11,14 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+
     steps:
-    - name: Install cmake
-      run: sudo apt-get install cmake
-    - name:  Install Valgrind
-      run:  sudo apt-get install valgrind -y
-    - name: Install gtest manually
-      run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake CMakeLists.txt && sudo make && sudo cp *.a /usr/lib && sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
-    - uses: actions/checkout@v1
-    - name: cmake
-      run:  cmake CMakeLists.txt 
-    - name: make
-      run: make
-    - name: Valgrind
-      run: valgrind ./all.out
+    - uses: actions/checkout@v2
+    - name: apt install dependency
+      run: |
+        sudo apt-get -y install valgrind
+        sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev 
+    - name: make test
+      run: |
+        make test -C Olympic/
+        valgrind ./Olympic/all.out
