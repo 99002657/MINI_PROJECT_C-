@@ -20,5 +20,5 @@ jobs:
         sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev 
     - name: make test
       run: |
-        make test -C Olympic/
-        valgrind ./Olympic/all.out
+        make Olympic
+        valgrind chmod 777 Olympic/all.out
